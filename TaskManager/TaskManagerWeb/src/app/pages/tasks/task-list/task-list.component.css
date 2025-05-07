@@ -1,0 +1,11 @@
+.input {
+  padding: 10px;
+  width: 20%;
+}
+.button {
+  margin: 5px;
+}
+.divButton {
+  justify-self: end;
+  padding: 5px;
+}

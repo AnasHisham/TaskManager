@@ -1,0 +1,26 @@
+.sidenav-container {
+  height: 100vh;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidenav-container {
+  height: 100vh;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
