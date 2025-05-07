@@ -1,0 +1,28 @@
+CREATE DATABASE TaskManagerDB;
+GO
+
+USE TaskManagerDB;
+GO
+CREATE TABLE Users (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Password NVARCHAR(100) NOT NULL,
+    Role NVARCHAR(20) NOT NULL  -- 'Admin' or 'User'
+);
+CREATE TABLE TaskItems (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(255),
+    Status NVARCHAR(20) DEFAULT 'Pending', -- 'Pending', 'InProgress', 'Done'
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id) ON DELETE CASCADE
+);
+INSERT INTO Users (Username, Password, Role) VALUES
+('admin', 'admin123', 'Admin'),
+('user', 'user123', 'User');
+
+-- Insert Tasks
+INSERT INTO TaskItems (Title, Description, Status, UserId) VALUES
+('Setup Project', 'Initial project structure', 'Done', 1),
+('Create UI', 'Build Angular forms', 'Pending', 2),
+('Test Backend', 'Add unit tests', 'InProgress', 2);
