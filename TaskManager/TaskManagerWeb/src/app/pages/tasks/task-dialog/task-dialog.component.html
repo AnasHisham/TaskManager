@@ -3,7 +3,7 @@
   <mat-dialog-content [formGroup]="form">
     <mat-form-field appearance="fill" *ngIf="role == 'Admin'">
       <mat-label>Title</mat-label>
-      <input matInput formControlName="title" />
+      <input maxlength="100" matInput formControlName="title" />
     </mat-form-field>
 
     <mat-form-field appearance="fill" *ngIf="role == 'Admin'">
@@ -25,7 +25,7 @@
     </mat-form-field>
     <mat-form-field appearance="fill" class="full-width" *ngIf="role == 'Admin'">
       <mat-label>Description</mat-label>
-      <textarea matInput formControlName="description"></textarea>
+      <textarea maxlength="255" matInput formControlName="description"></textarea>
     </mat-form-field>
   </mat-dialog-content>
 

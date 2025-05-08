@@ -3,7 +3,7 @@
   <mat-dialog-content [formGroup]="form">
     <mat-form-field appearance="fill">
       <mat-label>Username</mat-label>
-      <input matInput formControlName="username" />
+      <input matInput maxlength="50" formControlName="username" />
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -12,6 +12,7 @@
         matInput
         [type]="hide ? 'password' : 'text'"
         formControlName="password"
+             maxlength="100"
       />
       <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
         <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
